@@ -1,1 +1,1 @@
-# icarus
+# godot_platformer
