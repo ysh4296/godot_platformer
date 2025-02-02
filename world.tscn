@@ -1,51 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://co47wgeyhbdhy"]
 
-[ext_resource type="PackedScene" uid="uid://qlr0jwtm17fb" path="res://block.tscn" id="1_ktc7a"]
+[ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://tile_map.tscn" id="1_661r2"]
 [ext_resource type="PackedScene" uid="uid://b071ywqio7fjx" path="res://player.tscn" id="2_juetd"]
 
 [node name="World" type="Node2D"]
 
-[node name="Block" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(99, 144)
-
-[node name="Block8" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(225, 108)
-
-[node name="Block14" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(63, 108)
-
-[node name="Block9" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(225, 126)
-
-[node name="Block13" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(81, 144)
-
-[node name="Block11" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(225, 144)
-
-[node name="Block12" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(63, 126)
-
-[node name="Block10" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(63, 144)
-
-[node name="Block2" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(207, 144)
-
-[node name="Block5" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(171, 144)
-
-[node name="Block6" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(189, 144)
-
-[node name="Block7" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(153, 144)
-
-[node name="Block3" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(135, 144)
-
-[node name="Block4" parent="." instance=ExtResource("1_ktc7a")]
-position = Vector2(117, 144)
+[node name="TileMap" parent="." instance=ExtResource("1_661r2")]
+position = Vector2(1, 0)
+layer_0/tile_data = PackedInt32Array(458753, 458752, 2, 524289, 458752, 2, 589825, 458752, 2, 655361, 458752, 2, 655362, 458752, 2, 655363, 458752, 2, 655364, 458752, 2, 655365, 458752, 2, 655366, 458752, 2, 655367, 458752, 2, 655368, 458752, 2, 655369, 458752, 2, 655370, 458752, 2, 655371, 458752, 2, 393229, 458752, 2, 393217, 458752, 2, 524297, 458752, 2, 524298, 458752, 2, 524299, 458752, 2, 327693, 458752, 2, 327694, 458752, 2, 327692, 458752, 2, 655373, 458752, 2, 655372, 458752, 2, 524301, 458752, 2, 458765, 458752, 2, 589837, 458752, 2, 589826, 65536, 0, 589827, 131072, 0, 589828, 131072, 0, 589829, 131072, 0, 589830, 131072, 0, 589831, 131072, 0, 589832, 131072, 0, 589833, 131072, 0, 589834, 131072, 0, 589835, 131072, 0, 589836, 196608, 0, 393222, 65536, 7, 393223, 131072, 7, 393224, 196608, 7, 327688, 196608, 1, 327687, 131072, 1, 327686, 65536, 1, 458760, 0, 6, 524296, 0, 6, 458755, 0, 0, 196616, 131072, 0, 196615, 131072, 0, 196614, 65536, 0, 196617, 131072, 0, 196618, 131072, 0, 196619, 196608, 0)
 
 [node name="player" parent="." instance=ExtResource("2_juetd")]
 position = Vector2(99, 126)
