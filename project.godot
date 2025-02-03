@@ -23,6 +23,7 @@ window/size/resizable=false
 window/size/window_width_override=1800
 window/size/window_height_override=1500
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 
 [dotnet]
 
@@ -52,6 +53,11 @@ texture={
 "roughness/src_normal": "",
 "svg/scale": 1.0
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Charactors"
 
 [rendering]
 
