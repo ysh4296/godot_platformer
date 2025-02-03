@@ -1,21 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://b071ywqio7fjx"]
+[gd_scene load_steps=5 format=3 uid="uid://b071ywqio7fjx"]
 
-[ext_resource type="Script" path="res://Player.cs" id="1_r8tk0"]
+[ext_resource type="Script" path="res://player.gd" id="1_6vr08"]
 [ext_resource type="SpriteFrames" uid="uid://ddl4rkk2m5bu1" path="res://playerGreen.tres" id="2_qq0ao"]
+[ext_resource type="Resource" uid="uid://b8f8oflx8j0uw" path="res://FasterPlayerData.tres" id="2_r3ob3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwtaa"]
 size = Vector2(11.5, 15)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_r8tk0")
+script = ExtResource("1_6vr08")
+MoveData = ExtResource("2_r3ob3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_qwtaa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(1.35525e-20, -1)
 scale = Vector2(0.833333, 0.833333)
 sprite_frames = ExtResource("2_qq0ao")
 animation = &"jump"
+
+[node name="LadderCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -13)
+target_position = Vector2(0, 23)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BottomCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -12)
+target_position = Vector2(0, 21)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TopCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+target_position = Vector2(0, -24)
+collide_with_areas = true
+collide_with_bodies = false
