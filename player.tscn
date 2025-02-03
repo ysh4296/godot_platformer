@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b071ywqio7fjx"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_r8tk0"]
-[ext_resource type="SpriteFrames" uid="uid://dfrt73x81cd6r" path="res://playerBlue.tres" id="2_b7k0g"]
+[ext_resource type="SpriteFrames" uid="uid://ddl4rkk2m5bu1" path="res://playerGreen.tres" id="2_qq0ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwtaa"]
 size = Vector2(11.5, 15)
@@ -17,5 +17,5 @@ shape = SubResource("RectangleShape2D_qwtaa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 scale = Vector2(0.833333, 0.833333)
-sprite_frames = ExtResource("2_b7k0g")
+sprite_frames = ExtResource("2_qq0ao")
 animation = &"jump"

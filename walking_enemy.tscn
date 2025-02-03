@@ -1,45 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4qartx3osy0l"]
+[gd_scene load_steps=6 format=3 uid="uid://c4qartx3osy0l"]
 
-[ext_resource type="Texture2D" uid="uid://ddw2oy8exj1mw" path="res://tilemap-characters_packed.png" id="1_j21q3"]
 [ext_resource type="Script" path="res://walking_enemy.gd" id="1_v17a2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hk23e"]
-atlas = ExtResource("1_j21q3")
-region = Rect2(144, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nyyv"]
-atlas = ExtResource("1_j21q3")
-region = Rect2(168, 24, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_66qvn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hk23e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8nyyv")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 5.0
-}]
+[ext_resource type="Resource" uid="uid://c0niheoljo10g" path="res://PlayerData.tres" id="2_hlw7f"]
+[ext_resource type="SpriteFrames" uid="uid://rmcqm41r3p2k" path="res://walking_enemy.tres" id="2_jqvjf"]
+[ext_resource type="PackedScene" uid="uid://c76g8mdy1gcof" path="res://hit_box.tscn" id="3_r77s0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpkuv"]
-size = Vector2(11, 9.5)
+size = Vector2(11, 10)
 
 [node name="walkingEnemy" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_v17a2")
+moveData = ExtResource("2_hlw7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
-sprite_frames = SubResource("SpriteFrames_66qvn")
+sprite_frames = ExtResource("2_jqvjf")
 animation = &"walking"
 frame_progress = 0.0613583
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -4.75)
+position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_qpkuv")
 
 [node name="EdgeCheckRight" type="RayCast2D" parent="."]
@@ -49,3 +30,8 @@ target_position = Vector2(0, 4)
 [node name="EdgeCheckLeft" type="RayCast2D" parent="."]
 position = Vector2(-6, 0)
 target_position = Vector2(0, 4)
+
+[node name="HitBox" parent="." instance=ExtResource("3_r77s0")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(-8, 1, -8, -8, -2, -16, 1, -16, 7, -8, 7, 1)
