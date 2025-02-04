@@ -8,7 +8,7 @@ enum {
 	C
 }
 
-@export var MoveData: PlayerData = preload("res://FasterPlayerData.tres")
+@export var MoveData: PlayerData = preload("res://FasterPlayerData.tres") as PlayerData
 @onready var LadderCheck = $LadderCheck
 @onready var BottomCheck = $BottomCheck
 @onready var TopCheck = $TopCheck
@@ -80,7 +80,6 @@ func move_state(delta):
 		if Input.is_action_just_pressed("ui_accept") and double_jump == 0:
 			buffered_jump = true
 			JumpBifferTimer.start()
-			
 			
 	if not Input.is_action_pressed("ui_accept") and not is_on_floor() and velocity.y < 0:
 		velocity.y = 0
@@ -155,7 +154,3 @@ func input_jump():
 		AnimatedSprite.play("jump")
 		return true;
 	return false
-	
-# check weather we can do jump
-func can_jump():
-	pass
