@@ -18,10 +18,6 @@ layer_0/tile_data = PackedInt32Array(655361, 458752, 2, 655362, 458752, 2, 65536
 z_index = 10
 position = Vector2(99, 126)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-
 [node name="spikes" parent="." instance=ExtResource("3_6w6ja")]
 position = Vector2(153, 144)
 

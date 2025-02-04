@@ -6,3 +6,5 @@
 script = ExtResource("1_1ssi4")
 SPEED = 20.0
 direction = Vector2(-1, 0)
+CLIMBSPEED = 50.0
+MAXDOUBLEJUMP = 1
