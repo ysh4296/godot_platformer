@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 enum {
 	MOVE,
@@ -15,7 +16,8 @@ enum {
 @onready var AnimatedSprite = $AnimatedSprite2D
 @onready var JumpBifferTimer = $JumpBufferTimer
 @onready var CoyoteJumpTimer = $CoyoteJumpTimer
- 
+@onready var remoteTransform2D = $RemoteTransform2D
+
 const JUMP_VELOCITY = -300.0
 var double_jump = MoveData.MAXDOUBLEJUMP
 var state = MOVE
@@ -123,11 +125,8 @@ func climb_state(delta):
 			velocity.y = 0
 		
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
-		state = MOVE
-		velocity.y = JUMP_VELOCITY
-		AnimatedSprite.play("jump")
-	
+	if input_jump():
+		state=MOVE
 	if velocity.length() > 0:
 		AnimatedSprite.play("run")
 	else:
@@ -151,6 +150,17 @@ func _on_coyote_jump_timer_timeout() -> void:
 func input_jump():
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP_VELOCITY
+		SoundPlayer.play_sound(SoundPlayer.JUMP)
 		AnimatedSprite.play("jump")
 		return true;
 	return false
+
+func player_die():
+	#sound player play sound
+	SoundPlayer.play_sound(SoundPlayer.HIT)
+	Events.emit_signal("player_died")
+	queue_free() 
+ 
+func connect_camera(camera:Camera2D):
+	var camera_path = camera.get_path()
+	remoteTransform2D.remote_path = camera_path

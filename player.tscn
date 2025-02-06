@@ -37,9 +37,6 @@ target_position = Vector2(0, -30)
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-
 [node name="JumpBufferTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
@@ -47,6 +44,8 @@ one_shot = true
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="CoyoteJumpTimer" to="." method="_on_coyote_jump_timer_timeout"]

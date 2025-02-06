@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://co47wgeyhbdhy"]
+[gd_scene load_steps=11 format=3 uid="uid://co47wgeyhbdhy"]
 
 [ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://tile_map.tscn" id="1_661r2"]
 [ext_resource type="Script" path="res://world.gd" id="1_guf6f"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c4qartx3osy0l" path="res://walking_enemy.tscn" id="4_h87j3"]
 [ext_resource type="PackedScene" uid="uid://o6nan3yrryo4" path="res://ladder.tscn" id="6_4tg77"]
 [ext_resource type="PackedScene" uid="uid://dlvsyw54dd8l" path="res://moving_enemy.tscn" id="7_ll6sg"]
+[ext_resource type="PackedScene" uid="uid://dmupvks5ox7d2" path="res://check_point.tscn" id="8_b40ts"]
 
 [sub_resource type="Curve2D" id="Curve2D_stqcl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 18, 0, 0, 0, 0, 45, 36, 0, 0, 0, 0, 9, 54, 0, 0, 0, 0, -27, 54, 0, 0, 0, 0, -45, 27, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 41, 47.6471, 0, 0, 0, 0, 5, 47.6471, 0, 0, 0, 0, -31, 47.6471, 0, 0, 0, 0, -31, 0, 0, 0, 0, 0, -31, 0, 0, 0, 0, 0, 41, 0)
 }
-point_count = 8
+point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_mc8eb"]
 _data = {
@@ -59,7 +60,8 @@ position = Vector2(81, 117)
 position = Vector2(81, 135)
 
 [node name="MovingEnemy" parent="." instance=ExtResource("7_ll6sg")]
-position = Vector2(31, -3)
+position = Vector2(31, 0)
+scale = Vector2(1, 0.944444)
 curve = SubResource("Curve2D_stqcl")
 speed = 2.0
 
@@ -68,3 +70,11 @@ position = Vector2(195, 79)
 curve = SubResource("Curve2D_mc8eb")
 state = 1
 speed = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CheckPoint" parent="." instance=ExtResource("8_b40ts")]
+position = Vector2(117, 40)
