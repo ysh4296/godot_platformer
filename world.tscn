@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://co47wgeyhbdhy"]
+[gd_scene load_steps=12 format=3 uid="uid://co47wgeyhbdhy"]
 
 [ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://tile_map.tscn" id="1_661r2"]
 [ext_resource type="Script" path="res://world.gd" id="1_guf6f"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://o6nan3yrryo4" path="res://ladder.tscn" id="6_4tg77"]
 [ext_resource type="PackedScene" uid="uid://dlvsyw54dd8l" path="res://moving_enemy.tscn" id="7_ll6sg"]
 [ext_resource type="PackedScene" uid="uid://dmupvks5ox7d2" path="res://check_point.tscn" id="8_b40ts"]
+[ext_resource type="PackedScene" uid="uid://bqsmoyfmae7yr" path="res://stump_enemy.tscn" id="10_grpky"]
 
 [sub_resource type="Curve2D" id="Curve2D_stqcl"]
 _data = {
@@ -77,4 +78,7 @@ position_smoothing_enabled = true
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CheckPoint" parent="." instance=ExtResource("8_b40ts")]
-position = Vector2(117, 40)
+position = Vector2(117, 39)
+
+[node name="StumpEnemy" parent="." instance=ExtResource("10_grpky")]
+position = Vector2(9, 81)
