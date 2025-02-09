@@ -9,7 +9,7 @@ enum {
 	C
 }
 
-@export var MoveData: PlayerData = preload("res://FasterPlayerData.tres") as PlayerData
+@export var MoveData: PlayerData = preload("res://player/FasterPlayerData.tres") as PlayerData
 @onready var LadderCheck = $LadderCheck
 @onready var BottomCheck = $BottomCheck
 @onready var TopCheck = $TopCheck

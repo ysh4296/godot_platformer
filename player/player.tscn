@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b071ywqio7fjx"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_6vr08"]
-[ext_resource type="SpriteFrames" uid="uid://ddl4rkk2m5bu1" path="res://playerGreen.tres" id="2_qq0ao"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_6vr08"]
+[ext_resource type="SpriteFrames" uid="uid://ddl4rkk2m5bu1" path="res://player/playerGreen.tres" id="2_qq0ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwtaa"]
 size = Vector2(11.5, 15)

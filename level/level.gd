@@ -5,11 +5,11 @@ extends Node2D
 @onready var timer = $Timer
 
 var player_spawn_location = Vector2.ZERO
-const playerScene = preload("res://player.tscn")
+const playerScene = preload("res://player/player.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	RenderingServer.set_default_clear_color(Color.LIGHT_BLUE)
+	RenderingServer .set_default_clear_color(Color.LIGHT_BLUE)
 	player.connect_camera(camera)
 	player_spawn_location = player.global_position
 	Events.player_died.connect(_on_player_died)

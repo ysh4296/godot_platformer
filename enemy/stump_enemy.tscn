@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bqsmoyfmae7yr"]
 
-[ext_resource type="Texture2D" uid="uid://ddw2oy8exj1mw" path="res://tilemap-characters_packed.png" id="1_146p6"]
-[ext_resource type="Script" path="res://stump_enemy.gd" id="1_swn6x"]
-[ext_resource type="PackedScene" uid="uid://c76g8mdy1gcof" path="res://hit_box.tscn" id="2_fnsip"]
+[ext_resource type="Texture2D" uid="uid://ddw2oy8exj1mw" path="res://textures/world/tilemap-characters_packed.png" id="1_146p6"]
+[ext_resource type="Script" path="res://enemy/stump_enemy.gd" id="1_swn6x"]
+[ext_resource type="PackedScene" uid="uid://c76g8mdy1gcof" path="res://hitbox/hit_box.tscn" id="2_fnsip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0pqn"]
 atlas = ExtResource("1_146p6")

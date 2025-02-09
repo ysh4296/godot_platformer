@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4qartx3osy0l"]
 
-[ext_resource type="Script" path="res://walking_enemy.gd" id="1_v17a2"]
-[ext_resource type="Resource" uid="uid://c0niheoljo10g" path="res://PlayerData.tres" id="2_hlw7f"]
-[ext_resource type="SpriteFrames" uid="uid://rmcqm41r3p2k" path="res://walking_enemy.tres" id="2_jqvjf"]
-[ext_resource type="PackedScene" uid="uid://c76g8mdy1gcof" path="res://hit_box.tscn" id="3_r77s0"]
+[ext_resource type="Script" path="res://enemy/walking_enemy.gd" id="1_v17a2"]
+[ext_resource type="Resource" uid="uid://c0niheoljo10g" path="res://player/PlayerData.tres" id="2_hlw7f"]
+[ext_resource type="SpriteFrames" uid="uid://rmcqm41r3p2k" path="res://enemy/walking_enemy.tres" id="2_jqvjf"]
+[ext_resource type="PackedScene" uid="uid://c76g8mdy1gcof" path="res://hitbox/hit_box.tscn" id="3_r77s0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpkuv"]
 size = Vector2(11, 10)

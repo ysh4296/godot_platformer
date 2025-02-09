@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp7102yxaplgi"]
+
+[ext_resource type="PackedScene" uid="uid://drld3grbbm2qc" path="res://level/level.tscn" id="1_88h5a"]
+[ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://textures/world/tile_map.tscn" id="2_urs50"]
+[ext_resource type="PackedScene" uid="uid://c4qartx3osy0l" path="res://enemy/walking_enemy.tscn" id="3_dxfaa"]
+[ext_resource type="PackedScene" uid="uid://cjgok3voktysk" path="res://textures/world/door.tscn" id="4_cgm62"]
+
+[node name="Level2" instance=ExtResource("1_88h5a")]
+
+[node name="TileMap" parent="." index="2" instance=ExtResource("2_urs50")]
+layer_0/tile_data = PackedInt32Array(131067, 0, 1, 196603, 65536, 6, 196604, 131072, 1, 196605, 131072, 1, 196606, 131072, 1, 196607, 131072, 1, 131072, 131072, 1, 131073, 327680, 1, 131074, 131072, 6, 65538, 131072, 1, 65539, 131072, 1, 65540, 131072, 1, 65541, 196608, 1, 131076, 131072, 6, 131075, 131072, 6, 196610, 131072, 6, 262146, 131072, 7, 262147, 131072, 7, 262148, 131072, 7, 262149, 196608, 7, 196613, 196608, 6, 131077, 196608, 6, 196612, 131072, 6, 196611, 131072, 6, 262145, 131072, 7, 196609, 131072, 6, 196608, 131072, 6, 262144, 262144, 0, 327680, 196608, 7, 327679, 131072, 6, 262143, 131072, 6, 262142, 131072, 6, 262141, 131072, 6, 262140, 131072, 6, 262139, 65536, 6, 327676, 131072, 6, 327677, 131072, 6, 327678, 131072, 6, 393215, 131072, 7, 393214, 131072, 7, 327675, 65536, 6, 393211, 65536, 7, 393212, 131072, 7, 393213, 131072, 7, 65545, 65536, 1, 131081, 65536, 6, 196617, 65536, 6, 262153, 65536, 7, 262154, 131072, 7, 262155, 131072, 7, 262156, 131072, 7, 262157, 196608, 7, 196621, 196608, 6, 131085, 196608, 6, 65549, 196608, 1, 65548, 131072, 1, 65547, 131072, 1, 65546, 131072, 1, 131084, 131072, 6, 196620, 131072, 6, 131083, 131072, 6, 196619, 131072, 6, 196618, 131072, 6, 131082, 131072, 6, 65537, 65536, 1)
+
+[node name="walkingEnemy" parent="." index="3" instance=ExtResource("3_dxfaa")]
+position = Vector2(-45, 18)
+
+[node name="Door" parent="." index="5" instance=ExtResource("4_cgm62")]
+position = Vector2(207, 18)
+target_level_path = "res://level/level_1.tscn"

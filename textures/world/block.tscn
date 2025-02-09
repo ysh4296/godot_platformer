@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://qlr0jwtm17fb"]
 
-[ext_resource type="Texture2D" uid="uid://r3vjq2vn5ybb" path="res://tilemap_packed.png" id="1_pjgqn"]
+[ext_resource type="Texture2D" uid="uid://r3vjq2vn5ybb" path="res://textures/world/tilemap_packed.png" id="1_pjgqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve4nd"]
 size = Vector2(18, 18)

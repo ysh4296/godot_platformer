@@ -1,9 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx0d2sgy2ehia"]
+[gd_scene load_steps=15 format=3 uid="uid://bofqkrv2vipin"]
 
-[ext_resource type="Texture2D" uid="uid://r3vjq2vn5ybb" path="res://tilemap_packed.png" id="1_063g7"]
+[ext_resource type="PackedScene" uid="uid://drld3grbbm2qc" path="res://level/level.tscn" id="1_r0mqi"]
+[ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://textures/world/tile_map.tscn" id="2_3maqp"]
+[ext_resource type="Texture2D" uid="uid://r3vjq2vn5ybb" path="res://textures/world/tilemap_packed.png" id="3_0h318"]
+[ext_resource type="PackedScene" uid="uid://lc4y3qo8orfy" path="res://enemy/spikes.tscn" id="4_1a4h4"]
+[ext_resource type="PackedScene" uid="uid://c4qartx3osy0l" path="res://enemy/walking_enemy.tscn" id="5_mv7sj"]
+[ext_resource type="PackedScene" uid="uid://o6nan3yrryo4" path="res://textures/world/ladder.tscn" id="6_0dg16"]
+[ext_resource type="PackedScene" uid="uid://dlvsyw54dd8l" path="res://enemy/moving_enemy.tscn" id="7_5gvyi"]
+[ext_resource type="PackedScene" uid="uid://dmupvks5ox7d2" path="res://textures/world/check_point.tscn" id="8_lgv6c"]
+[ext_resource type="PackedScene" uid="uid://bqsmoyfmae7yr" path="res://enemy/stump_enemy.tscn" id="9_qj7ii"]
+[ext_resource type="PackedScene" uid="uid://cjgok3voktysk" path="res://textures/world/door.tscn" id="10_lotin"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqd57"]
-texture = ExtResource("1_063g7")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o7j6"]
+texture = ExtResource("3_0h318")
 texture_region_size = Vector2i(18, 18)
 use_texture_padding = false
 0:0/0 = 0
@@ -369,14 +378,82 @@ use_texture_padding = false
 20:9/0 = 0
 21:9/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_y8veg"]
+[sub_resource type="TileSet" id="TileSet_f6oeq"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_jqd57")
+sources/0 = SubResource("TileSetAtlasSource_8o7j6")
 
-[node name="TileMap" type="TileMap"]
-tile_set = SubResource("TileSet_y8veg")
-format = 2
+[sub_resource type="Curve2D" id="Curve2D_acuct"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 41, 47.6471, 0, 0, 0, 0, 5, 47.6471, 0, 0, 0, 0, -31, 47.6471, 0, 0, 0, 0, -31, 0, 0, 0, 0, 0, -31, 0, 0, 0, 0, 0, 41, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_ccac0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 54)
+}
+point_count = 2
+
+[node name="Level1" instance=ExtResource("1_r0mqi")]
+position = Vector2(-1, 0)
+
+[node name="player" parent="." index="0"]
+position = Vector2(109, 135)
+
+[node name="TileMap" parent="." index="2" instance=ExtResource("2_3maqp")]
+position = Vector2(1, 0)
+tile_set = SubResource("TileSet_f6oeq")
+layer_0/tile_data = PackedInt32Array(655361, 458752, 2, 655362, 458752, 2, 655363, 458752, 2, 655364, 458752, 2, 655365, 458752, 2, 655366, 458752, 2, 655367, 458752, 2, 655368, 458752, 2, 655369, 458752, 2, 655370, 458752, 2, 655371, 65536, 6, 655373, 196608, 1, 655372, 262144, 1, 589826, 131072, 0, 589827, 131072, 0, 589828, 131072, 0, 589829, 131072, 0, 589830, 131072, 0, 589831, 131072, 0, 589832, 131072, 0, 589833, 131072, 0, 589834, 131072, 0, 589835, 131072, 1, 589836, 196608, 1, 393222, 65536, 7, 393223, 131072, 7, 393224, 196608, 7, 327688, 196608, 1, 327687, 131072, 1, 327686, 65536, 1, 458755, 196608, 0, 196616, 131072, 0, 196615, 131072, 0, 196614, 65536, 0, 196617, 131072, 0, 196618, 131072, 0, 196619, 196608, 0, 589825, 131072, 0, 589824, 131072, 1, 655359, 65536, 1, 720893, 65536, 1, 720894, 131072, 1, 720895, 327680, 1, 655360, 196608, 6, 786431, 131072, 7, 786430, 131072, 7, 786429, 65536, 7, 720896, 196608, 7, 720907, 65536, 6, 720908, 131072, 6, 720909, 196608, 6, 786443, 65536, 6, 786444, 131072, 6, 786445, 262144, 1, 786446, 131072, 1, 786447, 131072, 1, 786448, 131072, 1, 786449, 131072, 1, 786450, 131072, 1, 786451, 196608, 1, 851981, 131072, 7, 851980, 131072, 7, 851979, 65536, 7, 851982, 131072, 7, 851984, 131072, 7, 851983, 131072, 7, 851985, 131072, 7, 851986, 131072, 7, 851987, 196608, 7, 458754, 131072, 0, 458753, 65536, 0, 262146, 196608, 0, 262145, 65536, 0)
+
+[node name="spikes" parent="." index="3" instance=ExtResource("4_1a4h4")]
+position = Vector2(153, 144)
+
+[node name="spikes2" parent="." index="4" instance=ExtResource("4_1a4h4")]
+position = Vector2(169, 144)
+
+[node name="spikes3" parent="." index="5" instance=ExtResource("4_1a4h4")]
+position = Vector2(136, 144)
+
+[node name="walkingEnemy" parent="." index="6" instance=ExtResource("5_mv7sj")]
+position = Vector2(165, 21)
+
+[node name="Ladder" parent="." index="7" instance=ExtResource("6_0dg16")]
+position = Vector2(81, 63)
+
+[node name="Ladder2" parent="." index="8" instance=ExtResource("6_0dg16")]
+position = Vector2(81, 81)
+
+[node name="Ladder3" parent="." index="9" instance=ExtResource("6_0dg16")]
+position = Vector2(81, 99)
+
+[node name="Ladder4" parent="." index="10" instance=ExtResource("6_0dg16")]
+position = Vector2(81, 117)
+
+[node name="Ladder5" parent="." index="11" instance=ExtResource("6_0dg16")]
+position = Vector2(81, 135)
+
+[node name="MovingEnemy" parent="." index="12" instance=ExtResource("7_5gvyi")]
+position = Vector2(31, 0)
+scale = Vector2(1, 0.944444)
+curve = SubResource("Curve2D_acuct")
+speed = 2.0
+
+[node name="MovingEnemy2" parent="." index="13" instance=ExtResource("7_5gvyi")]
+position = Vector2(195, 79)
+curve = SubResource("Curve2D_ccac0")
+state = 1
+speed = 2.0
+
+[node name="CheckPoint" parent="." index="14" instance=ExtResource("8_lgv6c")]
+position = Vector2(117, 39)
+
+[node name="StumpEnemy" parent="." index="15" instance=ExtResource("9_qj7ii")]
+position = Vector2(9, 81)
+
+[node name="Door" parent="." index="17" instance=ExtResource("10_lotin")]
+position = Vector2(307, 192)
+target_level_path = "res://level/level_2.tscn"
