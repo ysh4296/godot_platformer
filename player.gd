@@ -90,15 +90,15 @@ func move_state(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * MoveData.SPEED, 20)
+		velocity.x = move_toward(velocity.x, direction * MoveData.SPEED, 300 * delta)
 		AnimatedSprite.play("run")
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, 20)
-		AnimatedSprite.play("idle")
+		velocity.x = move_toward(velocity.x, 0, 300 * delta)
+		AnimatedSprite.play ("idle")
 	
-	if not velocity.x == 0:
-		AnimatedSprite.flip_h = velocity.x > 0
+	if not direction == 0:
+		AnimatedSprite.flip_h = direction > 0
 
 	var was_on_floor = is_on_floor()
 

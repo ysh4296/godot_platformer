@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_qwtaa")
 position = Vector2(1.35525e-20, -1)
 scale = Vector2(0.833333, 0.833333)
 sprite_frames = ExtResource("2_qq0ao")
-animation = &"jump"
+animation = &"idle"
 
 [node name="LadderCheck" type="RayCast2D" parent="."]
 position = Vector2(0, -13)
