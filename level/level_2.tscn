@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bp7102yxaplgi"]
 
 [ext_resource type="PackedScene" uid="uid://drld3grbbm2qc" path="res://level/level.tscn" id="1_88h5a"]
-[ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://textures/world/tile_map.tscn" id="2_urs50"]
+[ext_resource type="PackedScene" uid="uid://bx0d2sgy2ehia" path="res://world/tile_map.tscn" id="2_urs50"]
 [ext_resource type="PackedScene" uid="uid://c4qartx3osy0l" path="res://enemy/walking_enemy.tscn" id="3_dxfaa"]
-[ext_resource type="PackedScene" uid="uid://cjgok3voktysk" path="res://textures/world/door.tscn" id="4_cgm62"]
+[ext_resource type="PackedScene" uid="uid://cjgok3voktysk" path="res://world/door.tscn" id="4_cgm62"]
 
 [node name="Level2" instance=ExtResource("1_88h5a")]
 

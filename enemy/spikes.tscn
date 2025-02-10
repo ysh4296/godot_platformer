@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://lc4y3qo8orfy"]
 
-[ext_resource type="Texture2D" uid="uid://r3vjq2vn5ybb" path="res://textures/world/tilemap_packed.png" id="1_xm581"]
+[ext_resource type="Texture2D" uid="uid://r3vjq2vn5ybb" path="res://textures/tilemap_packed.png" id="1_xm581"]
 [ext_resource type="PackedScene" uid="uid://c76g8mdy1gcof" path="res://hitbox/hit_box.tscn" id="2_2tgxr"]
 
 [node name="spikes" type="Node2D"]

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SoundPlayer="*res://sounds/sound_player.tscn"
 Events="*res://events.gd"
+Transition="*res://level/transition.tscn"
 
 [display]
 
